@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(1) - Implementing a calculator – using HTML, CSS, and JS</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <style>
+        .btn{
+            height: 50px;
+            width: 50px;
+            margin: 2px;
+        }
+        .form{
+            height: 50px;
+            width: 222px;
+            margin: 2px;
+            text-align: right;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div align="center" class="calculator">
+        <form name="form">
+
+            <input name="display" type="text" class="form form-control" value="" placeholder="0">
+            <div>
+                <button type="button" class="btn btn-outline-primary" value="1" onclick="buttonfunction(this.value)">1</button>
+                <button type="button" class="btn btn-outline-primary" value="2" onclick="buttonfunction(this.value)">2</button>
+                <button type="button" class="btn btn-outline-primary" value="3" onclick="buttonfunction(this.value)">3</button>
+                <button type="button" class="btn btn-outline-primary" value="+" onclick="buttonfunction(this.value)">+</button>
+                <br/>
+
+                <button type="button" class="btn btn-outline-primary" value="4" onclick="buttonfunction(this.value)">4</button>
+                <button type="button" class="btn btn-outline-primary" value="5" onclick="buttonfunction(this.value)">5</button>
+                <button type="button" class="btn btn-outline-primary" value="6" onclick="buttonfunction(this.value)">6</button>
+                <button type="button" class="btn btn-outline-primary" value="-" onclick="buttonfunction(this.value)">-</button>
+                <br/>
+
+                <button type="button" class="btn btn-outline-primary" value="7" onclick="buttonfunction(this.value)">7</button>
+                <button type="button" class="btn btn-outline-primary" value="8" onclick="buttonfunction(this.value)">8</button>
+                <button type="button" class="btn btn-outline-primary" value="9" onclick="buttonfunction(this.value)">9</button>
+                <button type="button" class="btn btn-outline-primary" value="*" onclick="buttonfunction(this.value)">*</button>
+                <br/>
+
+                <button type="button" class="btn btn-outline-primary" onclick="equal()">=</button>
+                <button type="button" class="btn btn-outline-primary" onclick="clearScreen()">C</button>
+                <button type="button" class="btn btn-outline-primary" value="0" onclick="buttonfunction(this.value)">0</button>
+                <button type="button" class="btn btn-outline-primary" value="/" onclick="buttonfunction(this.value)">/</button>
+                <br/>
+
+            </div>
+        </form>
+    </div>
+    
+
+
+    <script>
+        function buttonfunction(val){
+            form.display.value += val;
+        }
+
+        function equal(){
+            form.display.value = eval(form.display.value);
+        }
+
+        function clearScreen(){
+            form.display.value = "";
+        }
+
+
+    </script>
+<script src="js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
